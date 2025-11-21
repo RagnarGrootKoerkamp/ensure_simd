@@ -1,0 +1,10 @@
+[package]
+name = "ensure_simd"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[features]
+# Ignore the AVX2 check, and build with less optimized code.
+scalar = []
