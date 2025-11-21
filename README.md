@@ -82,3 +82,7 @@ rustflags = ["-C", "target-cpu=apple-a14"]
 
 Then, in your workflow configuration, run `mv .cargo/config-portable.toml
 .cargo/config.toml` before invoking `cargo build`.
+
+[The blog
+post](https://curiouscoding.nl/posts/distributing-rust-simd-binaries/#distributing-binaries)
+links some examples for distributing to GitHub releases, bioconda, and pypi.
