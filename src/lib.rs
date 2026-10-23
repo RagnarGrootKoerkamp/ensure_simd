@@ -2,6 +2,8 @@
 //! NEON instructions (always available on aarch64), 256-bit AVX2 instructions (must be explicitly enabled on x86-64),
 //! or WebAssembly `simd128` instructions.
 //!
+//! Add `use ensure_simd as _;` to your crate root to ignore unused-dependency warnings.
+//!
 //! In case the AVX2 feature is not enabled on x64, crates like `wide` and the
 //! `portable-simd` feature will automatically fall back to scalar or 128-bit SIMD
 //! instructions, which are less efficient than the intended 256-bit AVX2 instructions.

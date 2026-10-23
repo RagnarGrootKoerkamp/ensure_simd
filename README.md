@@ -28,6 +28,11 @@ AVX2 instructions.
 
 [This blog post](https://curiouscoding.nl/posts/distributing-rust-simd-binaries/) contains some more background.
 
+To avoid any 'unused dependency' warnings, add:
+```rust
+use ensure_simd as _;
+```
+
 ## Installing a binary using SIMD instructions
 On aarch64, NEON is always available, and you should not run into any issues --
 `carg install <tool>` should _just work_.
