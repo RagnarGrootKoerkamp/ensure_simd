@@ -1,5 +1,11 @@
 # Changelog
 
+<!-- next-header -->
+
+## git
+
+- Also allow `simd128` on WASM.
+
 ## 0.1.0
 - initial release
 - `compile_error` check for NEON or AVX2.

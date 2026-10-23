@@ -9,7 +9,7 @@ enabled by default on x64,
 even though your system is very likely to support it.
 
 This library does a compile-time check that the target architecture indeed
-supports either NEON or AVX2 instructions.
+supports NEON, AVX2, or WebAssembly `simd128` instructions.
 This is especially relevant for CI builds, where it is easy to
 mis-configure the build flags and accidentally build a binary without AVX2 support.
 

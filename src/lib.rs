@@ -1,5 +1,6 @@
 //! This library does a compile-time check that the target architecture supports either 128-bit
-//! NEON instructions (always available on aarch64), or 256-bit AVX2 instructions (must be explicitly enabled on x86-64).
+//! NEON instructions (always available on aarch64), 256-bit AVX2 instructions (must be explicitly enabled on x86-64),
+//! or WebAssembly `simd128` instructions.
 //!
 //! In case the AVX2 feature is not enabled on x64, crates like `wide` and the
 //! `portable-simd` feature will automatically fall back to scalar or 128-bit SIMD
@@ -22,10 +23,11 @@
     debug_assertions,
     target_feature = "avx2",
     target_feature = "neon",
+    target_feature = "simd128",
     feature = "scalar"
 )))]
 compile_error!("
-The tool you are trying to build uses AVX2 (on x64) or NEON (on aarch64) SIMD instructions for performance.
+The tool you are trying to build uses AVX2 (on x64), NEON (on aarch64), or simd128 (on WebAssembly) SIMD instructions for performance.
 Unfortunately, AVX2 is not enabled by default on x64.
 To get the expected performance, compile/install using e.g.:
 RUSTFLAGS=\"-C target-cpu=native\" cargo ...
