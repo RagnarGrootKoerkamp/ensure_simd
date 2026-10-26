@@ -1,6 +1,6 @@
 [package]
 name = "ensure_simd"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 authors = ["Ragnar Groot Koerkamp"]
 description = "Compile-time check whether NEON or AVX2 is enabled"
